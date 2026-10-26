@@ -14,4 +14,5 @@ automatic_scaling:
 env_variables:
   APP_TITLE: "Student Manager – YourLastName"   # Step 4: put your last name here.
   APP_COLOR: "#2563eb"                           # Step 8: change this color for version v2.
+  FIRESTORE_DATABASE: "students-db"              # Name of the Firestore database you created.
   STUDENTS_COLLECTION: "students"                # Firestore collection that holds the records.
