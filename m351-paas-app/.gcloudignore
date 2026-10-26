@@ -1,0 +1,10 @@
+# Files that are not uploaded by "gcloud app deploy".
+.gcloudignore
+.git
+.gitignore
+__pycache__/
+*.pyc
+venv/
+.venv/
+.env
+README.md

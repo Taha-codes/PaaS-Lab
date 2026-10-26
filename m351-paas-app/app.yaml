@@ -1,0 +1,17 @@
+# App Engine configuration for the Student Manager.
+# This file replaces almost everything you configured by hand on the VM in Part I.
+
+runtime: python313          # Python version. The platform installs and patches it.
+instance_class: F1          # Size of each instance (F1 = 384 MB memory).
+
+# How to start the app. Gunicorn is the web server; main:app is the Flask app in main.py.
+entrypoint: gunicorn -b :$PORT --workers 1 --threads 8 main:app
+
+automatic_scaling:
+  min_instances: 0          # Stop all instances when nobody is using the app.
+  max_instances: 2          # Never run more than 2 instances (keeps the lab inside the free tier).
+
+env_variables:
+  APP_TITLE: "Student Manager – YourLastName"   # Step 4: put your last name here.
+  APP_COLOR: "#2563eb"                           # Step 8: change this color for version v2.
+  STUDENTS_COLLECTION: "students"                # Firestore collection that holds the records.
